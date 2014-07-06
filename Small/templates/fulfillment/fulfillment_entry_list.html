@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>fulfillment entry</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>sales order</th>
+          <th>deliverd..?</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for fe in object_list %}
+        <tr>
+          <td>{{ fe.id }}</td>
+          <td>{{ fe.so_id }}</td>
+          <td>{{ fe.deliverd }}</td>
+          <td>{{ fe.date_time }}</td>
+          <td><a href="{% url "fulfillment_update" fe.id %}">update</a></td>
+          <td><a href="{% url "fulfillment_delete" fe.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "fulfillment_create" %}">ADD</a>
+  </div>
+{% endblock %}

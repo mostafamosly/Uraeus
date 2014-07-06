@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Balance Sheets List </h1>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Sheet Name</th>
+              <th>Balanced?</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for b_sheet in object_list %}
+            <tr>
+              <td>{{ b_sheet.id }}</td>
+              <td>{{ b_sheet.name }}</td>
+              <td>{{ b_sheet.balanced }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}

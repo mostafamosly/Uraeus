@@ -1,0 +1,98 @@
+{% extends 'accounting/acc_base.html' %}
+
+<<<<<<< HEAD
+{% block asset %}
+<div class="col-md-2">
+    {% for asset in assets %}
+        <h4>{{ asset.name }}</h4>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block liabilities %}
+<div class="col-md-2">
+    {% for lia in liabilities %}
+        <h4>{{ lia.name }}</h4>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block equities %}
+<div class="col-md-2">
+    {% for equ in equities %}
+        <h4>{{ equ.name }}</h4>
+    {% endfor %}
+</div>
+=======
+{% block assets %}
+    <div class="col-md-4">
+        <a href="/accounting/assets"><h3>Assets</h3></a>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Account</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for asset in assets %}
+            <tr>
+              <td>{{ asset.id }}</td>
+              <td><a href="/accounting/asset/edit/{{ asset.id}}">{{ asset.name }}</a></td>
+              <td>{{ asset.account.id }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block liabilities %}
+    <div class="col-md-4">
+        <a href="/accounting/liabilities"><h3>Liabilities</h3></a>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Account</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for lia in liabilities %}
+            <tr>
+              <td>{{ lia.id }}</td>
+              <td><a href="/accounting/liability/edit/{{ lia.id}}">{{ lia.name }}</a></td>
+              <td>{{ lia.account.id }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block equities %}
+    <div class="col-md-4">
+        <a href="/accounting/equities"><h3>Equities</h3></a>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Account</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for equ in equities %}
+            <tr>
+              <td>{{ equ.id }}</td>
+              <td><a href="/accounting/liability/edit/{{ equ.id}}">{{ equ.name }}</a></td>
+              <td>{{ equ.account.id }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+>>>>>>> 0bda547093605ca934aeb32fcb71ff77e548dc7a
+{% endblock %}

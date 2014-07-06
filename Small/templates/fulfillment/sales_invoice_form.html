@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %} 
+
+{% block content %}
+
+<h1> Sales Invoice </h1>
+{% if Sales_Invoice %}
+{{ Sales_Invoice }}
+{% endif %}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <form method="post">
+            {% crispy form %}
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}
+

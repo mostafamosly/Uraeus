@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>PurchaseOrder</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>PurchaseRequision_ID</th>
+<<<<<<< HEAD:Small/templates/purchase/purchaseorder_list.html
+=======
+          <th>PAYMENT_TERMS</th>
+>>>>>>> 0bda547093605ca934aeb32fcb71ff77e548dc7a:Small/templates/purchase/purchaseorder_list.html
+          <th>DATE_TIME</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for order in object_list %}
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.prq_id }}</td>
+<<<<<<< HEAD:Small/templates/purchase/purchaseorder_list.html
+=======
+          <td>{{ order.payment_terms }}</td>
+>>>>>>> 0bda547093605ca934aeb32fcb71ff77e548dc7a:Small/templates/purchase/purchaseorder_list.html
+          <td>{{ order.date_time }}</td>
+          <td><a href="{% url "purchaseorder_update" order.id %}">update</a></td>
+          <td><a href="{% url "purchaseorder_delete" order.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "purchaseorder_create" %}">ADD</a>
+  </div>
+{% endblock %}

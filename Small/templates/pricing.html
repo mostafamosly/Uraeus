@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<body style="background-image: url({{ STATIC_URL }}img/slide.png)">
+
+	<!--start: Header -->
+	<header>
+
+		<!--start: Container -->
+		<div class="container">
+
+			<!--start: Row -->
+			<div class="row">
+
+				<!--start: Logo -->
+				<div class="logo span3">
+
+					<a class="brand" href="index.html"><img src="{{ STATIC_URL }}img/logo.png" alt="Logo"></a>
+
+				</div>
+				<!--end: Logo -->
+
+				<!--start: Navigation -->
+				<div class="span9">
+
+					<div class="navbar navbar-inverse">
+			    		<div class="navbar-inner">
+			        		<div class="container">
+			          			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			            			<span class="icon-bar"></span>
+			            			<span class="icon-bar"></span>
+			            			<span class="icon-bar"></span>
+			          			</a>
+			          			<div class="nav-collapse collapse">
+			            			<ul class="nav">
+
+			            			<li><a href="{% url "home" %}">Home</a></li>
+									<li><a href="{% url "services" %}">Services</a></li>
+			              			<li class="active"><a href="{% url "pricing" %}">Pricing</a></li>
+			              			<li><a href="{% url "about" %}">About Us</a></li>
+				              		<li><a href="accounts/register">Sign Up</a></li>
+                            		<li><a href="{% url "login" %}">log In</a></li>
+
+				            	</ul>
+			          			</div>
+			        		</div>
+			      		</div>
+			    	</div>
+
+				</div>
+				<!--end: Navigation -->
+
+			</div>
+			<!--end: Row -->
+
+		</div>
+		<!--end: Container-->
+
+	</header>
+	<!--end: Header-->
+
+
+	<!-- Our-plan section -->
+	  <div class="our-plan-parlex">
+	        <div class="our-plans">
+	            <h2>Choose what's appropriate for you!</h2>
+	          	<p class="our-plan-paragraph">I figured it out I figured it out from black and white Seconds and hours Maybe they had to take some time I know how it goes</p>
+	        </div>
+	        <div class="row">
+	            <div class="span3 offset2">
+	              	<div class="plan1">
+	                	<div class="plan1-ser1">
+	                  		<h2>One Month</h2>
+	                  		<div class="price">£100 / Month</div>
+	                	</div>
+	                	<p class="plan1-ser1-para">
+		                 	<br>Unlimited Users
+		                  	<br>
+		                  	<br>50GB Disk Space
+		                  	<br>
+		                  	<br>Unlimited Access
+		                  	<br>
+		                  	<br>Free Updates
+		                  	<br>
+		                  	<br>Save up your money</p>
+		                  	<a href="signinup.html" class="plan-1-butn" href="#">Sign Up!</a>
+	              	</div>
+	            </div>
+	            <div class="span3">
+	              <div class="plan1 plan2">
+	                <div class="plan2-ser2">
+	                  <h2>Three Months</h2>
+	                  <div class="price">$275 / Month</div>
+	                </div>
+	                <p class="plan1-ser1-para">
+	                  <br>Unlimited Users
+	                  <br>
+	                  <br>50GB Disk Space
+	                  <br>
+	                  <br>Unlimited Access
+	                  <br>
+	                  <br>Free Updates
+	                  <br>
+	                  <br>Save up your money</p>
+	                  <a href="signinup.html" class="plan-1-butn2 plan-1-butn" href="#">Sign Up!</a>
+	              </div>
+	            </div>
+	            <div class="span3">
+	              <div class="plan1 plan3">
+	                <div class="plan1-ser1 plan3-ser3">
+	                  <h2>Six Months</h2>
+	                  <div class="price">£500 / Month</div>
+	                </div>
+	                <p class="plan1-ser1-para">
+	                  <br>Unlimited Users
+	                  <br>
+	                  <br>50GB Disk Space
+	                  <br>
+	                  <br>Unlimited Access
+	                  <br>
+	                  <br>Free Updates
+	                  <br>
+	                  <br>Save up your money</p>
+	                  <a href="signinup.html" class="plan-1-butn plan-1-butn3" href="#">Sign Up!</a>
+	              </div>
+	            </div>
+	            <div class="span3">
+	              <div class="plan1 plan4">
+	                <div class="plan1-ser1 plan4-ser4">
+	                  <h2>One Year</h2>
+	                  <div class="price">£950&nbsp;/ Month</div>
+	                </div>
+	                <p class="plan1-ser1-para">
+	                  <br>Unlimited Users
+	                  <br>
+	                  <br>50GB Disk Space
+	                  <br>
+	                  <br>Unlimited Access
+	                  <br>
+	                  <br>Free Updates
+	                  <br>
+	                  <br>Save up your money</p>
+	                  <a href="signinup.html" class="plan-1-butn plan-4-butn4" href="#">Sign Up!</a>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	<!-- End Our-Plan section -->
+
+	<!-- start: Footer -->
+	<div id="footer">
+
+		<!-- start: Container -->
+		<div class="container">
+
+			<!-- start: grid -->
+			<div class="grid_6 prefix_3">
+
+				<!-- start: footer logo -->
+				<div class="f-logo">
+					<a href="index.html"><img src="{{ STATIC_URL }}img/f-logo.png" alt="logo"></a>
+					<p>Your Trusting ERP</p>
+				</div>
+				<!-- end: footer logo -->
+
+				<!-- start: Follow Us -->
+				<ul class="social-grid">
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-twitter">
+										<a href="http://twitter.com"></a>
+									</div>
+									<div class="social-info-back social-twitter-hover">
+										<a href="http://twitter.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-facebook">
+										<a href="http://facebook.com"></a>
+									</div>
+									<div class="social-info-back social-facebook-hover">
+										<a href="http://facebook.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-dribbble">
+										<a href="http://dribbble.com"></a>
+									</div>
+									<div class="social-info-back social-dribbble-hover">
+										<a href="http://dribbble.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-flickr">
+										<a href="http://flickr.com"></a>
+									</div>
+									<div class="social-info-back social-flickr-hover">
+										<a href="http://flickr.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- end: Follow Us -->
+
+				<!-- start: Copyright -->
+				<div id="copyright">
+
+					<!-- start: Container -->
+					<div class="container">
+
+						<p>
+							&copy; 2014 Uraeus. <a href="#" alt="Privacy Policy">Privacy Policy</a>
+						</p>
+
+					</div>
+					<!-- end: Container  -->
+
+				</div>
+				<!-- end: Copyright -->
+
+			</div>
+			<!-- end: Grid -->
+
+		</div>
+		<!-- end: Container  -->
+
+	</div>
+	<!-- end: Footer -->
+
+	<!-- start: Java Script -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="{{ STATIC_URL }}js/jquery-1.8.2.js"></script>
+	<script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+	<!-- end: Java Script -->
+
+</body>
+</html>
+
+
+{% endblock %}

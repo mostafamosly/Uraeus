@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Customer Invoice</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>customer order</th>
+          <th>datet_issued</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for cinv in object_list %}
+        <tr>
+          <td>{{ cinv.id }}</td>
+          <td>{{ cinv.customer_order }}</td>
+          <td>{{ cinv.datet_issued }}</td>
+          <td><a href="{% url "customerinvoice_update" cinv.id %}">update</a></td>
+          <td><a href="{% url "customerinvoice_delete" cinv.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "customerinvoice_create" %}">ADD</a>
+  </div>
+{% endblock %}

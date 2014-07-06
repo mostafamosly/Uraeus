@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+
+{% block login_area %}
+  {% if current_logged_user %}
+  <h1 class="logo">{{ current_logged_user }}</h1>
+{% else %}
+  <a href="{% url "login" %}"><h1 class="logo">Login</h1></a>
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+<h3>Order No. {{ customerorder }} Invoice No. {{ customerinvoice }}</h3>
+<div class="g-medium--1 g-medium--last g-wide--2">
+    <table class="table">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Sub Total</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for item in invoiceitem %}
+            <tr>
+              <td style="text-align:center; ">{{ item.product_name }}</td>
+              <td style="text-align:center; ">{{ item.quantity }}</td>
+              <td style="text-align:center; ">{{ item.item_subtotal}}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>{{ customerinvoice.invoice.total }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+{% endblock %}

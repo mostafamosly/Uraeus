@@ -1,0 +1,15 @@
+{
+  "name": "web-starter-kit",
+  "homepage": "https://github.com/google/web-starter-kit",
+  "version": "0.3.1",
+  "_release": "0.3.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.1",
+    "commit": "8f2f95de28dab2b3b24e6484bc415e4144bea17d"
+  },
+  "_source": "git://github.com/google/web-starter-kit.git",
+  "_target": "~0.3.1",
+  "_originalSource": "web-starter-kit",
+  "_direct": true
+}

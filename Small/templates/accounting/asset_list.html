@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Asset List </h1>
+<h1>Assets List </h1>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Asset Name</th>
+              <th>Account</th>
+              <th>BalanceSheet</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for asset in object_list %}
+            <tr>
+              <td>{{ asset.id }}</td>
+              <td>{{ asset.name }}</td>
+              <td>{{ asset.account }}</td>
+              <td>{{ asset.balance_sheet }}</td>
+              <td><a href="{% url "account_delete" asset.id %}"><span class="glyphicon glyphicon-remove"></span></a></td>
+              <td><a href="{% url "account_edit" asset.id %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+            </tr>
+            {% endfor %}
+
+
+          </tbody>
+        </table>
+        <script language="javascript" type="text/javascript">
+            function popitup(url) {
+                newwindow=window.open(url,'{{title}}','height=350,width=450');
+                if (window.focus) {newwindow.focus()}
+                return false;
+            }
+            </script>
+        <a href="/accounting/asset/new" onclick="return popitup('/accounting/asset/new')"><button type="submit" class="btn btn-default">Add Asset</button></a>
+        <a href="/accounting/asset/new" onclick="return showAddAnotherPopup(this);"><button type="submit" class="btn btn-default">Add Asset</button></a>
+        <a href="{% url "asset_add" %}"><button type="submit" class="btn btn-default">Add Asset</button></a>
+
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}

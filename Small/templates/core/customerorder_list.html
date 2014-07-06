@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Customer Order</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>customer ID</th>
+          <th>order ID</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for co in object_list %}
+        <tr>
+          <td>{{ co.id }}</td>
+          <td>{{ co.customer_ID }}</td>
+          <td>{{ co.order_ID }}</td>
+          <td><a href="{% url "corder_update" co.id %}">update</a></td>
+          <td><a href="{% url "corder_delete" co.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "corder_create" %}">ADD</a>
+  </div>
+{% endblock %}

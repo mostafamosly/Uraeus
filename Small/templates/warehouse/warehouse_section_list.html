@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Warehouse_Section</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>product</th>
+          <th>WAREHOUSE</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for ws in object_list %}
+        <tr>
+          <td>{{ ws.id }}</td>
+          <td>{{ ws.sec_name }}</td>
+          <td>{{ ws.sec_capacity }}</td>
+          <td>{{ ws.prod_id }}</td>
+          <td>{{ ws.warehouse_ID }}</td>
+          <td><a href="{% url "section_update" ws.id %}">update</a></td>
+          <td><a href="{% url "section_delete" ws.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "section_create" %}">ADD</a>
+  </div>
+{% endblock %}

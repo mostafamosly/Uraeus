@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0035)http://127.0.0.1:8000/admin/logout/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Logout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    <!-- Le styles, placed after extrastyle to correctly override default styling -->
+    <link href="http://127.0.0.1:8000/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="http://127.0.0.1:8000/static/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}logout/overrides.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" /> -->
+    <script type="text/javascript">
+    //<![CDATA[
+        window.__admin_media_prefix__ = "/static/admin/";
+    //]]>
+    </script>
+    <script src="{{ STATIC_URL }}logout/jquery-1.9.1.min.js"></script>
+    <script src="{{ STATIC_URL }}logout/jquery-migrate-1.2.1.min.js"></script>
+    <script src="{{ STATIC_URL }}logout/bootstrap.min.js"></script>
+
+    
+
+    <meta name="robots" content="NONE,NOARCHIVE">
+    <script type="text/javascript">
+    //<![CDATA[
+            (function($) {
+                $(document).ready(function() {
+                    $('input[type="submit"]').addClass('btn');
+                    $('[title]').tooltip();
+                });
+            }(jQuery));
+    //]]>
+    </script>
+</head>
+
+
+<body class="">
+
+<!-- Container -->
+<div class="container">
+
+    
+    <!-- Header -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+<a class="navbar-brand" href="{% url "login" %}">Uraeus Logout</a>
+
+                </div>
+                <div class="navbar-collapse collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        
+                        
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <!-- END Header -->
+    <div class="row">
+        <div class="col-sm-12">
+            
+
+        </div>
+    </div>
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <div class="navbar navbar-default">
+            <div class="navbar-inner">
+                
+                <a class="navbar-brand">Logged out</a>
+                
+            </div>
+        </div>
+        
+
+        
+        
+        
+
+        
+
+<p>Thanks for spending some quality time with the Web site today.</p>
+
+<p><a href="{% url "login" %}" class="btn btn-default">Log in again</a></p>
+
+
+        
+    </div>
+    <!-- END Content -->
+
+    <footer id="footer"></footer>
+</div>
+<!-- END Container -->
+
+
+
+</body></html>

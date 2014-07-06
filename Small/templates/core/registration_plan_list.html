@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Registration Plan</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Period</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for reg in object_list %}
+        <tr>
+          <td>{{ reg.id }}</td>
+          <td>{{ reg.registration_plan_name }}</td>
+          <td>{{ reg.registration_plan_Period }}</td>
+          <td>{{ reg.registration_plan_Price }}</td>
+          <td><a href="{% url "registration_plan_update" reg.id %}">update</a></td>
+          <td><a href="{% url "registration_plan_delete" reg.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "registration_plan_create" %}">ADD</a>
+  </div>
+{% endblock %}

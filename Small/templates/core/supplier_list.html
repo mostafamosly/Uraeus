@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <h2>Supplier</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>PHone</th>
+          <th>FAX</th>
+          <th>Address</th>
+          <th>Account</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for supplier in object_list %}
+        <tr>
+          <td>{{ supplier.id }}</td>
+          <td>{{ supplier.s_name }}</td>
+          <td>{{ supplier.s_email }}</td>
+          <td>{{ supplier.s_phone }}</td>
+          <td>{{ supplier.s_fax }}</td>
+          <td>{{ supplier.address }}</td>
+          <td>{{ supplier.s_account }}</td>
+          <td><a href="{% url "supplier_update" supplier.id %}">update</a></td>
+          <td><a href="{% url "supplier_delete" supplier.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "supplier_create" %}">ADD</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Equities List </h1>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Account</th>
+              <th>BalanceSheet</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for equity in object_list %}
+            <tr>
+              <td>{{ equity.id }}</td>
+              <td>{{ equity.account }}</td>
+              <td>{{ equity.balance_sheet }}</td>
+              <td><a href="{% url "equity_delete" equity.id %}"><span class="glyphicon glyphicon-remove"></span></a></td>
+              <td><a href="{% url "equity_edit" equity.id %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <a href="{% url "equity_add" %}"><button type="submit" class="btn btn-default">Add Equity</button></a>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}

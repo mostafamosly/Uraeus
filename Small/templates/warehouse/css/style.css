@@ -1,0 +1,84 @@
+
+/* Header
+=================================================================== */
+	
+header {
+	background: #2c3e50;
+	border-bottom: 5px solid #1abc9c;
+}
+
+.logo img {
+	margin-top:8px;
+}
+
+#social-links {
+	margin-top:20px;
+	text-align: center;
+}
+
+.navbar, 
+.navbar-inner, 
+.nav {
+	float: right;
+	background: #2c3e50 !important;
+	font-family:'Droid Sans';
+	border: none;
+	-webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+	padding: 0px;
+	margin: 0;	
+}
+
+.navbar-inner {
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.navbar .nav > li > a {
+	color: #fff;
+	border-top:4px solid #2c3e50;
+	text-shadow: none;
+	font-size: 16px;
+	padding: 20px;
+
+}
+
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+	border-top:4px solid #1abc9c;
+  	background: #1abc9c !important;		
+  	color: #fff;
+}
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  	color: #fff;
+  	text-decoration: none;
+	border-top:4px solid #1abc9c;
+  	background-color: #1abc9c!important;	
+  	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+          	box-shadow: none;
+}
+
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  color: #fff;
+  background: #1abc9c !important;	
+}
+
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  color: #fff;
+  background: #2c3e50 !important;	
+}
+
+.navbar .btn-navbar {
+	position: absolute;
+	right: 50px;
+	top: 150px;
+}
+

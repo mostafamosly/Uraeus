@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Invoice</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>product name</th>
+          <th>quantity</th>
+          <th>pro_price</th>
+          <th>datetimestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for invoice in object_list %}
+        <tr>
+          <td>{{ invoice.id }}</td>
+          <td>{{ invoice.product_name }}</td>
+          <td>{{ invoice.quantity }}</td>
+          <td>{{ invoice.pro_price }}</td>
+          <td>{{ invoice.datetimestamp }}</td>
+          <td>{{ invoice.Product_Price }}</td>
+          <td>{{ invoice.warehouse }}</td>
+          <td><a href="{% url "invoice_update" invoice.id %}">update</a></td>
+          <td><a href="{% url "invoice_delete" invoice.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "invoice_create" %}">ADD</a>
+  </div>
+{% endblock %}

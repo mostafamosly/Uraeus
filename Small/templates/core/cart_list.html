@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Cart</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for cart in object_list %}
+        <tr>
+          <td>{{ cart.id }}</td>
+          <td>{{ cart.Product_Name }}</td>
+          <td>{{ cart.quantity }}</td>
+          <td><a href="{% url "cart_update" cart.id %}">update</a></td>
+          <td><a href="{% url "cart_delete" cart.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "cart_create" %}">ADD</a>
+  </div>
+{% endblock %}

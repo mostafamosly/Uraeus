@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Order</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>cart</th>
+          <th>date_ordered</th>
+          <th>delivery_date</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for order in object_list %}
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.cart }}</td>
+          <td>{{ order.date_ordered }}</td>
+          <td>{{ order.delivery_date }}</td>
+          <td><a href="{% url "order_update" order.id %}">update</a></td>
+          <td><a href="{% url "order_delete" order.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "order_create" %}">ADD</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block login_area %}
+{% if current_logged_user %}
+<h1 class="logo">{{ current_logged_user }}</h1>
+{% else %}
+<h1 class="logo">Login</h1>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+<h3>Available Products</h3>
+	{% for product in products %}
+		<div class="g-medium--half g-wide--1">
+			<img src="{{ product.Product_image.url }}">
+			<h4>{{ product.Product_Name }} {{ product.Product_Price }}</h4>
+			<a href="{% url "add_to_cart" product.id %}"><button class="button--primary" name="Add to cart">Add to Cart</button></a>
+		</div>
+	{% endfor %}
+{% endblock %}

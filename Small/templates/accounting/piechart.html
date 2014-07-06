@@ -1,0 +1,15 @@
+{% load nvd3_tags %}
+<head>
+    {% include_chart_jscss %}
+    {% load_chart charttype chartdata chartcontainer extra %}
+</head>
+<body>
+    <h1>Small Accounts</h1>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            {% include_container chartcontainer 400 600 %}
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</body>

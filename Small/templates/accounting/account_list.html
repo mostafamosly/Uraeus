@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>Accounts List </h1>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Account Name</th>
+              <th>Nature</th>
+              <th>Debit</th>
+              <th>Credit</th>
+              <th>Added</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for account in object_list %}
+            <tr>
+              <td>{{ account.id }}</td>
+              <td>{{ account.name }}</td>
+              <td>{{ account.nature }}</td>
+              <td>{{ account.debit_balance }}</td>
+              <td>{{ account.credit_balance }}</td>
+              <td>{{ account.date_added }}</td>
+              <td><a href="{% url "account_delete" account.id %}"><span class="glyphicon glyphicon-remove"></span></a></td>
+              <td><a href="{% url "account_edit" account.id %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <a href="{% url "account_add" %}"><button type="submit" class="btn btn-default">Add Account</button></a>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+{% endblock %}

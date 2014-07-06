@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+
+{% block login_area %}
+  {% if current_logged_user %}
+  <h1 class="logo">{{ current_logged_user }}</h1>
+{% else %}
+  <h1 class="logo">Login</h1>
+{% endif %}
+{% endblock %}
+
+
+{% block content %}
+<h3>{{ customer }}'s Cart</h3>
+
+<div class="g-medium--1 g-medium--last g-wide--2">
+	<table class="table">
+          <thead>
+            <tr>
+              <th>Item Name</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for item in cartItems %}
+            <tr>
+              <td style="text-align:center; ">{{ item.product_name }}</td>
+              <td style="text-align:center; ">{{ item.quantity }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <a href="{% url "order" cart.id %}"><button class="button--primary" name="Order">Order</button></a>
+	</div>
+{% endblock %}

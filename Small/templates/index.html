@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<body>
+
+	<!--start: Header -->
+	<header>
+
+		<!--start: Container -->
+		<div class="container">
+
+			<!--start: Row -->
+			<div class="row">
+
+				<!--start: Logo -->
+				<div class="logo span3">
+
+					<a class="brand" href="index.html"><img src="{{ STATIC_URL }}img/logo.png" alt="Logo"></a>
+
+				</div>
+				<!--end: Logo -->
+
+				<!--start: Navigation -->
+				<div class="span9">
+
+					<div class="navbar navbar-inverse">
+			    		<div class="navbar-inner">
+				          	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				           		<span class="icon-bar"></span>
+				           		<span class="icon-bar"></span>
+				           		<span class="icon-bar"></span>
+				       		</a>
+				       		<div class="nav-collapse collapse">
+				           		<ul class="nav">
+			            			<li class="active"><a href="{% url "home" %}">Home</a></li>
+									<li><a href="{% url "services" %}">Services</a></li>
+			              			<li><a href="{% url "pricing" %}">Pricing</a></li>
+			              			<li><a href="{% url "about" %}">About Us</a></li>
+				              		<li><a href="accounts/register">Sign Up</a></li>
+
+				              		<li><a href="{% url "login" %}">log In</a></li>
+
+				              		<li><a href="accounts/login">log In</a></li>
+
+				            	</ul>
+				          	</div>
+			        	</div>
+			      	</div>
+
+				</div>
+				<!--end: Navigation -->
+
+			</div>
+			<!--end: Row -->
+
+		</div>
+		<!--end: Container-->
+
+	</header>
+	<!--end: Header-->
+
+	<!-- start: Slider -->
+	<div class="slider-wrapper" style="height:605px">
+
+		<div id="da-slider" class="da-slider" style="height:600px">
+			<div class="da-slide">
+				<h2>Not another ERP!</h2>
+				<p>Automation and integration of corporate processes, data and procedure sharing, including standardization, across the whole enterprise, creation of information and its accessibility across the whole enterprise..</p>
+				<div class="da-link"><button onclick="location.href='signinup.html'" type="button" class="btn btn-primary" href="#"><i class="ico-user ico-blue" style="vertical-align: -13px"></i> Sign Up Now!</button></div>
+	    <!--    <p>Already have an account?</p>
+				<div class="da-link"><a href="#"><strong>Log In</strong></a></div> -->
+				<div class="da-img"><img src="{{ STATIC_URL }}img/parallax-slider/all.png" alt="image01" /></div>
+			</div>
+
+
+			<div class="da-slide">
+				<h2>It's over the cloud!</h2>
+				<p>Automation and integration of corporate processes, data and procedure sharing, including standardization, across the whole enterprise, creation of information and its accessibility across the whole enterprise.</p>
+				<div class="da-link"><button onclick="location.href='signinup.html'" type="button" class="btn btn-primary"><i class="ico-user ico-blue" style="vertical-align: -13px"></i> Sign Up Now!</button></div>
+				<div class="da-img"><img src="{{ STATIC_URL }}img/parallax-slider/cloud-sun.png" alt="image02" /></div>
+
+
+
+			</div>
+			<div class="da-slide">
+				<h2>Pay As You Go!</h2>
+				<p>You don't have to pay thousands of pounds to get the work done. You may pay monthly, yearly, or whatever you like to pay. And it’s cheaper than the other ERPs. ay kalam tany 3shan nemashy el be3a.</p>
+				<div class="da-link"><button onclick="location.href='signinup.html'" type="button" class="btn btn-primary"><i class="ico-user ico-blue" style="vertical-align: -13px"></i> Sign Up Now!</button></div>
+				<div class="da-img"><img src="{{ STATIC_URL }}img/parallax-slider/gold.png" alt="image03" /></div>
+			</div>
+
+
+			<div class="da-slide">
+				<h2>Access it Anywhere!</h2>
+				<p>Computer, Laptop, Tablet or even a smart phone! You can access it anywhere you want!. Computer, Laptop, Tablet or even a smart phone! You can access it anywhere you want!.</p>
+				<div class="da-link"><button onclick="location.href='signinup.html'" type="button" class="btn btn-primary"><i class="ico-user ico-blue" style="vertical-align: -13px"></i> Sign Up Now!</button></div>
+				<div class="da-img"><img src="{{ STATIC_URL }}img/parallax-slider/access2.png" alt="image04" /></div>
+			</div>
+			<nav class="da-arrows">
+				<span class="da-arrows-prev"></span>
+				<span class="da-arrows-next"></span>
+			</nav>
+		</div>
+
+	</div>
+	<!-- end: Slider -->
+
+	<!-- start: Footer -->
+	<div id="footer">
+
+		<!-- start: Container -->
+		<div class="container">
+
+			<!-- start: grid -->
+			<div class="grid_6 prefix_3">
+
+				<!-- start: footer logo -->
+				<div class="f-logo">
+					<a href="index.html"><img src="{{ STATIC_URL }}img/f-logo.png" alt="logo"></a>
+					<p>Your Trusting ERP</p>
+				</div>
+				<!-- end: footer logo -->
+
+				<!-- start: Follow Us -->
+				<ul class="social-grid">
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-twitter">
+										<a href="http://twitter.com"></a>
+									</div>
+									<div class="social-info-back social-twitter-hover">
+										<a href="http://twitter.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-facebook">
+										<a href="http://facebook.com"></a>
+									</div>
+									<div class="social-info-back social-facebook-hover">
+										<a href="http://facebook.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-dribbble">
+										<a href="http://dribbble.com"></a>
+									</div>
+									<div class="social-info-back social-dribbble-hover">
+										<a href="http://dribbble.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-flickr">
+										<a href="http://flickr.com"></a>
+									</div>
+									<div class="social-info-back social-flickr-hover">
+										<a href="http://flickr.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- end: Follow Us -->
+
+				<!-- start: Copyright -->
+				<div id="copyright">
+
+					<!-- start: Container -->
+					<div class="container">
+
+						<p>
+							&copy; 2014 Uraeus. <a href="#" alt="Privacy Policy">Privacy Policy</a>
+						</p>
+
+					</div>
+					<!-- end: Container  -->
+
+				</div>
+				<!-- end: Copyright -->
+
+			</div>
+			<!-- end: Grid -->
+
+		</div>
+		<!-- end: Container  -->
+
+	</div>
+	<!-- end: Footer -->
+
+
+<!-- start: Java Script -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ STATIC_URL }}js/jquery-1.8.2.js"></script>
+<script src="{{ STATIC_URL }}js/bootstrap.js"></script>
+<script src="{{ STATIC_URL }}js/flexslider.js"></script>
+<script src="{{ STATIC_URL }}js/carousel.js"></script>
+<script src="{{ STATIC_URL }}js/jquery.cslider.js"></script>
+<script src="{{ STATIC_URL }}js/slider.js"></script>
+<script defer="defer" src="{{ STATIC_URL }}js/custom.js"></script>
+<!-- end: Java Script -->
+
+</body>
+</html>
+
+{% endblock %}

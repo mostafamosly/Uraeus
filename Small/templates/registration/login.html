@@ -1,0 +1,299 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block title %}Sign in{% endblock %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>Join Us or Log In | Uraeus ERP</title>
+	<meta name="description" content="Uraeus an erp system"/>
+	<meta name="keywords" content="erp, system, business, control, cloud, enhance, rent, rental" />
+	<meta name="author" content="Uraeus team"/>
+	<!-- end: Meta -->
+
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- end: Mobile Specific -->
+
+	<!-- start: Facebook Open Graph -->
+	<meta property="og:title" content=""/>
+	<meta property="og:description" content=""/>
+	<meta property="og:type" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content=""/>
+	<!-- end: Facebook Open Graph -->
+
+	<!-- start: favicon -->
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ STATIC_URL }}img/icons/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ STATIC_URL }}mg/icons/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ STATIC_URL }}img/icons/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ STATIC_URL }}img/icons/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{ STATIC_URL }}img/icons/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ STATIC_URL }}img/icons/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ STATIC_URL }}img/icons/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{ STATIC_URL }}img/icons/favicons/apple-touch-icon-152x152.png">
+	<link rel="icon" type="image/png" href="{{ STATIC_URL }}img/icons/favicons/favicon-196x196.png" sizes="196x196">
+	<link rel="icon" type="image/png" href="{{ STATIC_URL }}img/icons/favicons/favicon-160x160.png" sizes="160x160">
+	<link rel="icon" type="image/png" href={{ STATIC_URL }}img/icons/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="{{ STATIC_URL }}img/icons/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="{{ STATIC_URL }}img/icons/favicons/favicon-32x32.png" sizes="32x32">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<!-- end favicon -->
+
+
+    <!-- start: CSS -->
+    <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
+	<!-- end: CSS -->
+
+</head>
+<body style="background: url(img/slide.png)">
+
+	<!--start: Header -->
+	<header>
+
+		<!--start: Container -->
+		<div class="container">
+
+			<!--start: Row -->
+			<div class="row">
+
+				<!--start: Logo -->
+				<div class="logo span3">
+
+					<a class="brand" href="#"><img src="{{ STATIC_URL }}img/logo.png"></a>
+
+				</div>
+				<!--end: Logo -->
+
+				<!--start: Navigation -->
+				<div class="span9">
+
+					<div class="navbar navbar-inverse">
+			    		<div class="navbar-inner">
+			        		<div class="container">
+			          			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			            			<span class="icon-bar"></span>
+			            			<span class="icon-bar"></span>
+			            			<span class="icon-bar"></span>
+			          			</a>
+			          			<div class="nav-collapse collapse">
+			            			<ul class="nav">
+			              				<li><a href="{% url "home" %}">Home</a></li>
+			              				<li><a href="{% url "services" %}">Services</a></li>
+			              				<li><a href="{% url "pricing" %}">Pricing</a></li>
+			              				<li><a href="{% url "about" %}">About Us</a></li>
+			              				<li><a href="/accounts/register">Sign Up</a></li>
+			              				<li class="active"><li><a href="{% url "login" %}">log In</a></li>
+			            			</ul>
+			          			</div>
+			        		</div>
+			      		</div>
+			    	</div>
+
+				</div>
+				<!--end: Navigation -->
+			</div>
+			<!--end: Row -->
+
+		</div>
+		<!--end: Container-->
+
+	</header>
+	<!--end: Header-->
+
+<!-- start: Content -->
+<div class="sign">
+
+	<div class="row">
+
+
+
+				</div><!-- row -->
+
+		</div><!-- signin -->
+		<div class="container">
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-10">
+      <h1>Sign in</h1>
+      <p>Not yet registered?
+        <a href="{% url 'registration_register' %}">Register now for free!</a></p>
+      <p>Trouble signing in?
+        <a href="{% url 'django.contrib.auth.views.password_reset' %}">Reset password.</a></p>
+    </div>
+  </div>
+
+  {% if form.errors %}
+  <div class="row">
+    <div class="alert alert-danger col-sm-offset-2 col-sm-6">
+      <p><strong>Login failed. Try again...</strong></p>
+    </div>
+  </div>
+  {% endif %}
+
+  <form action="{% url 'django.contrib.auth.views.login' %}"
+      method="post"
+      role="form"
+      class="form-horizontal">
+    {% csrf_token %}
+
+    {% bootstrap_field form.username layout='horizontal' %}
+    {% bootstrap_field form.password layout='horizontal' %}
+    {% if next %}
+      <input type="hidden" name="next" value="{{ next }}" />
+    {% else %}
+      <input type="hidden" name="next" value="{% url 'profile' %}" />
+    {% endif %}
+    {% buttons %}
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">
+        {% bootstrap_icon "star" %} Login
+      </button>
+    </div>
+    {% endbuttons %}
+  </form>
+
+</div>
+
+
+
+
+
+
+
+						</div><!-- span4 -->
+					</div><!-- row -->
+
+
+
+
+				</form><!-- form -->
+			</section><!-- content -->
+
+		</div><!-- span8 -->
+		</div><!-- signup -->
+	</div><!-- row -->
+</div><!-- end: sign -->
+
+	<!-- start: Footer -->
+	<div id="footer">
+
+		<!-- start: Container -->
+		<div class="container">
+
+			<!-- start: grid -->
+			<div class="grid_6 prefix_3">
+
+				<!-- start: footer logo -->
+				<div class="f-logo">
+					<a href="index.html"><img src="{{ STATIC_URL }}img/f-logo.png" alt="logo"></a>
+					<p>Your Trusting ERP</p>
+				</div>
+				<!-- end: footer logo -->
+
+				<!-- start: Follow Us -->
+				<ul class="social-grid">
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-twitter">
+										<a href="http://twitter.com"></a>
+									</div>
+									<div class="social-info-back social-twitter-hover">
+										<a href="http://twitter.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-facebook">
+										<a href="http://facebook.com"></a>
+									</div>
+									<div class="social-info-back social-facebook-hover">
+										<a href="http://facebook.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-dribbble">
+										<a href="http://dribbble.com"></a>
+									</div>
+									<div class="social-info-back social-dribbble-hover">
+										<a href="http://dribbble.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="social-item">
+							<div class="social-info-wrap">
+								<div class="social-info">
+									<div class="social-info-front social-flickr">
+										<a href="http://flickr.com"></a>
+									</div>
+									<div class="social-info-back social-flickr-hover">
+										<a href="http://flickr.com"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- end: Follow Us -->
+
+				<!-- start: Copyright -->
+				<div id="copyright">
+
+					<!-- start: Container -->
+					<div class="container">
+
+						<p>
+							&copy; 2014 Uraeus. <a href="#" alt="Privacy Policy">Privacy Policy</a>
+						</p>
+
+					</div>
+					<!-- end: Container  -->
+
+				</div>
+				<!-- end: Copyright -->
+
+			</div>
+			<!-- end: Grid -->
+
+		</div>
+		<!-- end: Container  -->
+
+	</div>
+	<!-- end: Footer -->
+
+<!-- start: Java Script -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ STATIC_URL }}js/forms.js"></script>
+<!-- end: Java Script -->
+
+</body>
+</html>
+
+
+{% endblock %}

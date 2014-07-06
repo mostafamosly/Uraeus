@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Procurement</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>SUPPLIER ID</th>
+          <th>PRODUCT ID</th>
+          <th>PurchaseInvoice ID</th>
+          <th>RECIVED..?</th>
+          <th>DATE</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for Pro in object_list %}
+        <tr>
+          <td>{{ Pro.id }}</td>
+          <td>{{ Pro.supplier_id }}</td>
+          <td>{{ Pro.product_id }}</td>
+          <td>{{ Pro.pi_id }}</td>
+          <td>{{ Pro.recived }}</td>
+          <td>{{ Pro.date_time }}</td>
+          <td><a href="{% url "procurement_update" Pro.id %}">update</a></td>
+          <td><a href="{% url "procurement_delete" Pro.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "procurement_create" %}">ADD</a>
+  </div>
+{% endblock %}

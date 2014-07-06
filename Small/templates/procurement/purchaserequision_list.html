@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Purchase Requision</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>PurchaseOrder_ID</th>
+          <th>STATUS</th>
+          <th>DATE_TIME</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for requist in object_list %}
+        <tr>
+          <td>{{ requist.id }}</td>
+          <td>{{ requist.product }}</td>
+          <td>{{ requist.status }}</td>
+          <td>{{ requist.date_time }}</td>
+          <td><a href="{% url "purchaserequision_update" requist.id %}">update</a></td>
+          <td><a href="{% url "purchaserequision_delete" requist.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "purchaserequision_create" %}">ADD</a>
+  </div>
+{% endblock %}

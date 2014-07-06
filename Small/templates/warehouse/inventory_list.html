@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block wel_message %}
+<div class="page-header">
+        <h1>Welcome to Codename<small> Small </small></h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <h2>Products</h2>
+    <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>quantity</th>
+          <th>supplier</th>
+          <th>w_house</th>
+          <th>save_quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for Product in object_list %}
+        <tr>
+          <td>{{ Product.id }}</td>
+          <td>{{ Product.product_name }}</td>
+          <td>{{ Product.quantity }}</td>
+          <td>{{ Product.supplier }}</td>
+          <td>{{ Product.w_house }}</td>
+          <td>{{ Product.save_quantity }}</td>
+          <td><a href="{% url "inventory_update" Product.id %}">update</a></td>
+          <td><a href="{% url "inventory_delete" Product.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url "inventory_create" %}">ADD</a>
+  </div>
+{% endblock %}

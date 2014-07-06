@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<title>SMALL Home</title>
+		<meta charset="UTF-8">
+		<meta name=description content="">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap CSS -->
+		<link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+		<script type="text/javascript" src='{% static 'admin/js/admin/RelatedObjectLookups.js' %}'></script>
+	</head>
+	<body>
+        <div class="container">
+            <div class="main">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+		<script type="text/javascript" src='{% static 'jquery/dist/jquery.js' %}'></script>
+		<script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+	</body>
+</html>
